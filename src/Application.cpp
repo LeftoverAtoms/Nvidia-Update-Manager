@@ -1,10 +1,7 @@
+#include <filesystem>
 #include <iostream>
-#include <string>
 #include "nvml.h"
 #include "Windows.h"
-
-#include <filesystem>
-#include <fstream> 
 
 using namespace std;
 
@@ -37,29 +34,12 @@ void updateDriverVersion()
     }
     else cout << "Located directory at " + path + "\n\n";
 
-    ofstream file;
-    file.open(path + "TextInDisguise.exe");
-    file << "Lmao now I can install malware on your computer.";
-    file.close();
-
-    cout << "Go to that directory and come back once you figure it out!\n\n";
-
-    while (!filesystem::exists(path + "TextInDisguise.txt"))
-    {
-    }
-
-    system("pause");
-
-    filesystem::remove_all(path);
-
-    cout << "\nNow wasn't that just hilarious?\n\n";
-
-    system("pause");
+    //filesystem::remove_all(path);
 }
 
 int main()
 {
-    SetConsoleTitle(L"Atomic Drivers");
+    SetConsoleTitle(L"Nvidia Update Manager");
 
     nvmlInit();
     getDriverVersion();
