@@ -1,0 +1,1 @@
+Maybe switch over to NVAPI and use this application to update and monitor the GPU.
